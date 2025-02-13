@@ -6,12 +6,13 @@ function selectOption(option) {
     if (option === 'yes') {
         // Flash rainbow colors
         flashRainbowColors(function() {
-            document.getElementById('question').style.display = 'none'; // Hide the question
+            document.getElementById('question').style.display = 'I love you binky! I knew you would make the right choice!'; // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?'; 
+        displaySadSeal();
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
@@ -47,12 +48,32 @@ function displayCat() {
     // Create a new Image element for the cat
     var catImage = new Image();
     // Set the source (file path) for the cat image
-    catImage.src = 'cat.gif'; // Assuming the cat image is named "cat.gif"
+    catImage.src = 'og-pibble.gif'; // Assuming the cat image is named "cat.gif"
     // Set alternative text for the image (for accessibility)
-    catImage.alt = 'Cat';
+    catImage.alt = 'OG Pibbston';
     // When the cat image is fully loaded, add it to the image container
     catImage.onload = function() {
         imageContainer.appendChild(catImage);
+    };
+}
+
+// Function to display the cat-heart.gif
+function displaySadSeal() {
+    // Clear existing content in the image container
+    document.getElementById('image-container').innerHTML = '';
+    // Get the container where the image will be displayed
+    var imageContainer = document.getElementById('image-container');
+    // Create a new Image element for the cat-heart
+    var catHeartImage = new Image();
+    // Set the source (file path) for the cat-heart image
+    catHeartImage.src = 'baby-seal-sad.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    // Set alternative text for the image (for accessibility)
+    catHeartImage.alt = 'Sad Seal';
+    // When the cat-heart image is fully loaded, add it to the image container
+    catHeartImage.onload = function() {
+        imageContainer.appendChild(catHeartImage);
+        // Hide the options container
+        document.getElementById('options').style.display = 'none';
     };
 }
 
@@ -65,9 +86,9 @@ function displayCatHeart() {
     // Create a new Image element for the cat-heart
     var catHeartImage = new Image();
     // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    catHeartImage.src = 'dinkler_and_me.jpg'; // Assuming the cat-heart image is named "cat-heart.gif"
     // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Cat Heart';
+    catHeartImage.alt = 'Binks and I';
     // When the cat-heart image is fully loaded, add it to the image container
     catHeartImage.onload = function() {
         imageContainer.appendChild(catHeartImage);
